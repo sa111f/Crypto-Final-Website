@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaboration and Researchers</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #ffe3ed;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 4px solid #5d6cff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .researcher-list {
+      margin-top: 1rem;
+    }
+
+    .researcher-list li {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-group input[type="file"] {
+      border: none;
+    }
+
+    .form-btn {
+      background-color: #5d6cff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-btn:hover {
+      background-color: #3c4ac9;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background-color: #5d6cff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #3c4ac9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f1f1f1;
+      color: #555;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Collaboration and Researchers</h1>
+    <p>Connect, share, and collaborate on Cryptosporidium research.</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Section 1: Collaboration Details -->
+    <div class="section">
+      <h2>Collaboration Opportunities</h2>
+      <p>
+        Collaboration is key to advancing research and improving animal health outcomes. By sharing knowledge and resources, researchers can tackle challenges associated with Cryptosporidium more effectively.
+      </p>
+    </div>
+
+    <!-- Section 2: Submit Your Research -->
+    <div class="section">
+      <h2>Submit Your Research</h2>
+      <p>
+        If you have conducted research on Cryptosporidium, we encourage you to share it with us. Submit your findings using the form below, and attach any relevant documents for review.
+      </p>
+      <form action="send_mail2.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <div class="form-group">
+          <label for="research-title">Research Title:</label>
+          <input type="text" id="research-title" name="research_title" placeholder="Enter the title of your research" required>
+        </div>
+        <div class="form-group">
+          <label for="details">Research Abstract/Details:</label>
+          <textarea id="details" name="details" rows="6" placeholder="Provide a brief abstract or details about your research" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="attachment">Attach Documents:</label>
+          <input type="file" id="attachment" name="attachment" accept=".pdf, .docx, .xlsx">
+        </div>
+        <button type="submit" class="form-btn">Submit Research</button>
+      </form>
+      
+    </div>
+
+    <!-- Back Button -->
+    <div class="section" style="text-align: center;">
+      <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Cryptosporidium Awareness | All Rights Reserved
+  </footer>
+</body>
+</html>

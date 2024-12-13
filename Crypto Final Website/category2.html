@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Reporting and Tracking</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #ffe3ed;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 4px solid #5d6cff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+
+    .section {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: none;
+    }
+
+    .form-btn {
+      background-color: #5d6cff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-btn:hover {
+      background-color: #3c4ac9;
+    }
+
+    .chat-section {
+      text-align: center;
+      padding: 2rem;
+      background-color: #e0f7fa;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-section .icon {
+      font-size: 3rem;
+      color: #5d6cff;
+      margin-bottom: 1rem;
+    }
+
+    .chat-btn {
+      background-color: #5d6cff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .chat-btn:hover {
+      background-color: #3c4ac9;
+    }
+
+    .chat-box {
+      display: none;
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 300px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .chat-box header {
+      background-color: #5d6cff;
+      color: white;
+      padding: 1rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    .chat-box .messages {
+      padding: 1rem;
+      height: 200px;
+      overflow-y: auto;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .chat-box .input-area {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-box input {
+      flex: 1;
+      padding: 0.8rem;
+      border: none;
+      border-top-left-radius: 15px;
+    }
+
+    .chat-box button {
+      padding: 0.8rem;
+      background-color: #5d6cff;
+      color: white;
+      border: none;
+      border-top-right-radius: 15px;
+      cursor: pointer;
+    }
+
+    .back-btn {
+      display: inline-block;
+      background-color: #5d6cff;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #3c4ac9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #f1f1f1;
+      color: #555;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Case Reporting and Tracking</h1>
+    <p>Help us track and report Cryptosporidium cases effectively</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Section 1: Report a Case -->
+    <div class="section">
+      <h2>Report a Case</h2>
+      <p>
+        Please fill out the form below to report the case of Cryptosporidium in affected animal along with name of animal.
+      </p>
+      <form action="send_mail.php" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+        <div class="form-group">
+          <label for="location">Enter Affected Animal Name:</label>
+          <input type="text" id="location" name="location" placeholder="Enter Animal Name" required>
+        </div>
+        <div class="form-group">
+          <label for="details">Details of the Case:</label>
+          <textarea id="details" name="details" rows="6" placeholder="Provide as much detail as possible" required></textarea>
+        </div>
+        <button type="submit" class="form-btn">Submit Case</button>
+      </form>
+      
+      
+    </div>
+
+    <!-- Section 2: Chat with an Expert -->
+    <div class="chat-section">
+      <div class="icon">💬</div>
+      <h2>Need immediate assistance? Chat with a Scientist</h2>
+
+      <button class="chat-btn" onclick="openChat()">Start Chat</button>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box" id="chatBox">
+      <header>Chat with an Expert</header>
+      <div class="messages" id="messages">
+        <p>Welcome! How can we assist you today?</p>
+      </div>
+      <div class="input-area">
+        <input type="text" id="chatInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="section" style="text-align: center;">
+      <a href="index.html" class="back-btn">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Cryptosporidium Awareness | All Rights Reserved
+  </footer>
+
+  <script>
+    function openChat() {
+      document.getElementById('chatBox').style.display = 'block';
+    }
+
+    function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const message = input.value;
+      if (message.trim() !== '') {
+        const messages = document.getElementById('messages');
+        const newMessage = document.createElement('p');
+        newMessage.textContent = `You: ${message}`;
+        messages.appendChild(newMessage);
+        input.value = '';
+        messages.scrollTop = messages.scrollHeight;
+      }
+    }
+  </script>
+</body>
+</html>
